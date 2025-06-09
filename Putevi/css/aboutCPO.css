@@ -1,0 +1,39 @@
+/* Основной контент */
+main {
+    margin: 35px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 46px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.photo-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.photo-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}

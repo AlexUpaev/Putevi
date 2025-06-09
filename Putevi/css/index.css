@@ -1,0 +1,441 @@
+/* Слайдер */
+.slides-container {
+    position: relative;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 2000px; 
+}
+
+/* Стили для заголовка */
+.slides-container h2 {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+/* Стили для кнопки */
+.slides-container .view-all {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.projects-container h3 {
+    font-weight: 600;
+    font-size: 36px;
+    color: #F5F5F5;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.projects-link {
+    color: #F5F5F5;
+    font-weight: 500;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-left: auto;
+    padding-right: 150px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.projects-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.projects-link:hover {
+    color: #005BAA;
+}
+
+.projects-link:hover::after {
+    width: calc(100% - 150px);
+    /* Учитываем padding-right */
+    background-color: #005BAA;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 2000px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.01);
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #005BAA;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #003366;
+    box-shadow: 0 0 15px rgba(0, 91, 170, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow.prev {
+    left: 10px;
+}
+
+.slider-arrow.next {
+    right: 10px;
+}
+
+/* Индикаторы слайдов (опционально) */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #005BAA;
+    transform: scale(1.2);
+}
+
+/* Секция "Добро пожаловать" */
+.welcome-section {
+    padding: 60px 200px;
+    color: #333;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.welcome-section h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 20px 0 20px;
+    color: #555;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.welcome-section h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    position: relative;
+    font-style: italic;
+}
+
+.welcome-section p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.achievements {
+    margin: 40px 0;
+}
+
+.achievement-item {
+    margin-bottom: 25px;
+    padding-left: 25px;
+    border-left: 4px solid #005BAA;
+    font-size: 18px;
+}
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects-table th {
+    background-color: #005BAA;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.projects-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.projects-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Основные стили для галереи */
+.projects-gallery {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Тень снизу */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to bottom,
+            rgba(0, 91, 170, 0) 0%,
+            rgba(0, 91, 170, 0.7) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Информация о проекте */
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    box-sizing: border-box;
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 2em;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-info p {
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 80%;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Показывать тень и информацию при наведении */
+.gallery-item:hover::after,
+.gallery-item:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Эффекты для изображений */
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Стили для стрелок  */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #005BAA;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-prev {
+    left: 20px;
+}
+
+.gallery-next {
+    right: 20px;
+}
+
+.gallery-nav:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: #003366;
+    box-shadow: 0 0 15px rgba(0, 91, 170, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Стили для вводного текста */
+.projects-intro {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.projects-intro h2 {
+    font-size: 3.5em;
+    color: 333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.projects-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-button-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Стили для кнопки */
+.gallery-button {
+    display: inline-block;
+    padding: 10px 30px 10px 30px;
+    background-color: #005BAA;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: 2px solid #005BAA;
+}
+
+/* Эффекты при наведении */
+.gallery-button:hover {
+    background-color: transparent;
+    color: #005BAA;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 91, 170, 0.2);
+}
+
+/* Эффекты при нажатии */
+.gallery-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}

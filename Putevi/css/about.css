@@ -1,0 +1,125 @@
+/* История */
+.history-section {
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.history-title{
+    font-size: 36px;
+}
+
+.section-text {
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Контейнер для всех блоков */
+.gallery-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 100px; 
+    margin: 60px 500px 0 500px;
+}
+
+/* Один блок (фото или текст) */
+.gallery-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+
+.text-content {
+    padding: 30px;
+    max-width: 600px;
+    color: #fff;
+}
+
+.year-badge {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.year-badge::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.history-text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #fff;
+    margin: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.02);
+}
+
+.gallery-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+
+.gallery-caption h3 {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.gallery-caption p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.gallery-item {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.text-left,
+.image-right {
+    order: 1;
+}
+
+.image-left,
+.text-right {
+    order: 2;
+}
