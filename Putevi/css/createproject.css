@@ -1,0 +1,99 @@
+/* Основной контейнер */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Блок формы */
+.form-block {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок формы */
+.form-block h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Группы полей формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Метки полей */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Поля ввода */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Фокус на полях ввода */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+/* Выпадающий список */
+.form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px 8px;
+}
+
+/* Текстовое поле */
+.form-group textarea {
+    resize: 16px;
+    min-height: 120px;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    background-color: #005BAA;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Эффект при наведении на кнопку */
+.submit-btn:hover {
+    background-color: #3a7bc8;
+}

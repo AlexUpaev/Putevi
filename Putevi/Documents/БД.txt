@@ -1,0 +1,70 @@
+DROP DATABASE IF EXISTS Putevi;
+CREATE DATABASE Putevi;
+
+USE Putevi;
+
+-- 1. ПОЛЬЗОВАТЕЛИ 
+CREATE TABLE users (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL COMMENT 'Полное имя пользователя (ФИО)',
+	phone VARCHAR(20) COMMENT 'Контактный телефон',
+    email VARCHAR(100) NOT NULL UNIQUE COMMENT 'Уникальный email пользователя (логин)',
+    password_hash VARCHAR(255) NOT NULL COMMENT 'Хеш пароля',
+    role ENUM('admin', 'employee', 'client') NOT NULL COMMENT 'Роль в системе: администратор, менеджер, инженер, клиент, соискатель',
+	-- Метки времени
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата регистрации',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Дата последнего обновления'
+);
+
+-- 2. ПРОЕКТЫ
+CREATE TABLE projects (
+    id_project INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL COMMENT 'Название проекта',
+	start_date DATE COMMENT 'Планируемая/фактическая дата начала',
+    end_date DATE COMMENT 'Планируемая/фактическая дата завершения',
+	status ENUM('planning', 'active', 'suspended', 'completed') DEFAULT 'planning' COMMENT 'Текущий статус проекта',
+	address VARCHAR(255) COMMENT 'Физический адрес реализации проекта',
+    description TEXT COMMENT 'Подробное описание проекта',
+    budget DECIMAL(12,2) COMMENT 'Общий бюджет проекта (в рублях)',
+	-- Внешние ключи 
+	client_id INT NOT NULL COMMENT 'ID клиента-заказчика',
+    FOREIGN KEY (client_id) REFERENCES users(id_user),
+	-- Метки времени
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата создания проекта',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Дата последнего обновления'
+);
+
+-- 3. ОБЪЕДИНЁННЫЕ ЗАЯВКИ 
+CREATE TABLE requests (
+    id_request INT AUTO_INCREMENT PRIMARY KEY,
+	-- ФИО, телефон, почта через user
+    request_type ENUM('consultation', 'service', 'employment') NOT NULL COMMENT 'Тип заявки: консультация, жалоба, услуга, трудоустройство',
+    message TEXT NOT NULL COMMENT 'Текст заявки/обращения',
+    status ENUM('new', 'processing', 'resolved') DEFAULT 'new' COMMENT 'Статус обработки',
+    -- Внешние ключи
+	user_id INT COMMENT 'ID пользователя (если авторизован)',
+    project_id INT NULL COMMENT 'ID связанного проекта (если применимо)',
+    FOREIGN KEY (user_id) REFERENCES users(id_user) ON DELETE SET NULL,
+    FOREIGN KEY (project_id) REFERENCES projects(id_project) ON DELETE SET NULL,
+	-- Метки времени
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата создания',
+    resolved_at TIMESTAMP NULL COMMENT 'Дата разрешения',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Дата обновления'
+);
+
+-- 4. ОТЗЫВЫ
+CREATE TABLE reviews (
+    id_review INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    content TEXT NOT NULL COMMENT 'Текст отзыва',
+	rating TINYINT NOT NULL CHECK (rating BETWEEN 1 AND 5) COMMENT 'Оценка (от 1 до 5 звезд)',
+    is_approved BOOLEAN DEFAULT FALSE COMMENT 'Флаг модерации (показывать ли отзыв публично)',
+	-- Внешние ключи   
+	project_id INT NOT NULL COMMENT 'ID проекта, к которому относится отзыв',
+    user_id INT NOT NULL COMMENT 'ID пользователя, оставившего отзыв',
+    FOREIGN KEY (project_id) REFERENCES projects(id_project) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id_user) ON DELETE CASCADE,
+	-- Метки времени
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата создания отзыва',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Дата последнего обновления'
+);

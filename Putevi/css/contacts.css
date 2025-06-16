@@ -1,0 +1,221 @@
+/* Контактная информация */
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center; /* Добавлено для центрирования */
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px; /* Добавлено для ограничения ширины */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    color: #005BAA;
+    margin: 25px 0 15px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info h2:first-child {
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px; /* Добавлено для ограничения ширины */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция отзывов */
+.reviews-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого */
+}
+
+.reviews-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    width: 100%; /* Занимает всю доступную ширину */
+    justify-items: center; /* Центрирование элементов сетки */
+}
+
+.review-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ограничение ширины карточки */
+    width: 100%;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-header h3 {
+    color: #005BAA;
+    font-size: 1.2rem;
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 1.1rem;
+    display: flex; /* Добавлено для правильного выравнивания звезд */
+    align-items: center; /* Выравнивание звезд по центру */
+}
+
+.rating i {
+    margin: 0 1px; /* Небольшой отступ между звездами */
+}
+
+.review-content {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.review-author {
+    font-style: italic;
+    color: #666;
+    text-align: right;
+}
+
+/* Форма добавления отзыва */
+.add-review-form {
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.add-review-form h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #005BAA;
+}
+
+.add-review-form .form-group {
+    margin-bottom: 20px;
+}
+
+.add-review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.add-review-form input[type="text"],
+.add-review-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.add-review-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.add-review-form input[type="text"]:focus,
+.add-review-form textarea:focus {
+    border-color: #005BAA;
+    outline: none;
+}
+
+.rating-select {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.rating-select input {
+    display: none;
+}
+
+.rating-select label {
+    color: #ddd;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.rating-select input:checked~label,
+.rating-select label:hover,
+.rating-select label:hover~label {
+    color: #FFD700;
+}
+
+.login-prompt {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.login-prompt a {
+    color: #005BAA;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-prompt a:hover {
+    color: #004080;
+    text-decoration: underline;
+}
+
+.submit-btn {
+    background-color: #005BAA;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #004080;
+}

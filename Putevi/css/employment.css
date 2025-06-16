@@ -1,0 +1,137 @@
+/* Основной контейнер */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap; /* Для адаптивности на маленьких экранах */
+}
+
+.left-block,
+.right-block {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px);
+}
+
+.left-block h2,
+.right-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Левый блок */
+.left-block {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: calc(50% - 10px);
+}
+
+.left-block h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.news-item {
+    display: flex;
+    gap: 25px;
+}
+
+.news-image {
+    flex: 0 0 200px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.news-image img:hover {
+    transform: scale(1.03);
+}
+
+.news-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-text {
+    margin-bottom: 20px;
+}
+
+.news-text p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.news-text .intro {
+    font-weight: 600;
+    color: #333;
+}
+
+.news-meta {
+    margin-top: auto;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Стили для правого блока */
+.right-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.right-block label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.right-block input,
+.right-block select,
+.right-block textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.right-block textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.right-block button {
+    background-color: #005BAA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.right-block button:hover {
+    background-color: #3d79c1;
+}

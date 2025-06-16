@@ -38,9 +38,9 @@ img {
 
 /* === Header Container === */
 .container-header {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 400px 10px 400px;
+    max-width: 2400px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем по горизонтали */
+    padding: 10px 20px; /* Меньшие отступы */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -108,7 +108,7 @@ header.scroll-header nav ul li a {
 
 /* === Hero Section === */
 .hero {
-    padding-top: 500px;
+    padding-top: 400px;
     padding-left: 250px;
     padding-bottom: 100px;
     color: rgb(255, 255, 255);

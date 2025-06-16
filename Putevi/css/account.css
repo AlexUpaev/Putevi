@@ -1,0 +1,80 @@
+.account-container {
+    max-width: 800px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.account-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    background-color: #e9f7ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.user-info p {
+    margin: 10px 0;
+}
+
+.role {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.role-user {
+    background-color: #cceeff;
+    color: #0077aa;
+}
+
+.role-admin {
+    background-color: #ffe0b3;
+    color: #cc6600;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.requests-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.requests-table th,
+.requests-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.requests-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.status-in-progress {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-completed {
+    background-color: #d4edda;
+    color: #155724;
+}

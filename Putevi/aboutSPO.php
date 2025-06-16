@@ -1,0 +1,85 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Допуск СРО</title>
+    <link rel="icon" href="/img/Logo.svg">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/aboutCPO.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Фоновое изображение -->
+        <div class="hero-bg">
+            <img src="/img/aboutCPO.jpg" alt="">
+        </div>
+
+        <!-- Шапка -->
+        <?php require_once "blocks/header.php"; ?>
+
+        <!-- Контент -->
+        <div class="hero">
+            <div class="hero--info">
+                <h1>О нас</h1>
+                <p>Сложные конструкции, аутентичная архитектура,
+                    эксклюзивные интерьеры, технологические инновации.
+                    Гостиницы, бизнес-жилые и коммерческие объекты,
+                    университетские городки, аквапарки, стадионы</p>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <main>
+            <section class="photo-section">
+                <h2>Допуск СРО</h2>
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="/img/CPO.jpg" alt="Свидетельство по строительству">
+                        <p>Свидетельство по строительству</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="/img/CPO2.jpg" alt="Выписка из реестра членов СРО по строительству от 01-2022г">
+                        <p>Выписка из реестра членов СРО по строительству от 01-2022г</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="/img/CPO3.jpg" alt="Свидетельство на проектирование">
+                        <p>Свидетельство на проектирование</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="/img/CPO4.jpg" alt="Выписка из реестра членов СРО на проектирование от 08-02-2022г">
+                        <p>Выписка из реестра членов СРО на проектирование от 08-02-2022г</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Контейнер для фото с историей  -->
+        <div class="history-fullwidth-container">
+            <!-- Фоновое изображение на всю ширину -->
+            <div class="history-image-wrapper">
+                <img src="/img/highway.jpg" alt="История компании" class="history-fullwidth-image">
+            </div>
+
+            <!-- Контент поверх изображения -->
+            <div class="history-content-wrapper">
+                <div class="history-content">
+                    <h2>63 года бизнеса</h2>
+                    <p>Наша история - это история объединения людей и мест, о страстных делах, которые сформировали нашу
+                        компанию.</p>
+                    <p class="highlight-text">Загляните в мир дорог</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <?php require_once "blocks/footer.php"; ?>
+
+    <script src="/js/header.js"></script>
+</body>
+
+</html>
