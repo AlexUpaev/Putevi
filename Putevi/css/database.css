@@ -1,0 +1,319 @@
+/* Основные стили для панели администратора */
+.admin-panel {
+    width: 95%;
+    max-width: 98%;
+    margin: 150px auto;
+    padding: 25px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    min-height: calc(100vh - 150px);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-header h1 {
+    color: #2c3e50;
+    font-size: 26px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.header-info {
+    text-align: right;
+}
+
+.header-info .company {
+    font-weight: 600;
+    color: #3498db;
+    font-size: 15px;
+}
+
+/* Стили для формы поиска и выбора таблицы */
+.controls-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.table-selector {
+    width: 250px;
+}
+
+.search-container input,
+.table-selector select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    background-color: #f9f9f9;
+}
+
+.search-container input:focus,
+.table-selector select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    background-color: #fff;
+}
+
+/* Стили таблицы */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.data-table th {
+    background-color: #005BAA;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 2px solid #003d7a;
+    position: sticky;
+    top: 0;
+}
+
+.data-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover {
+    background-color: #f5f9ff;
+}
+
+/* Стили для форм в таблице */
+.table-form {
+    display: contents;
+}
+
+/* Стили для полей ввода */
+.editable-cell {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+}
+
+textarea.editable-cell {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.editable-cell:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+    background-color: #fff;
+}
+
+/* Стили для кнопок действий */
+.actions {
+    display: flex;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    min-width: 70px;
+    text-align: center;
+}
+
+.save-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Эффект нажатия */
+.action-btn:active {
+    transform: translateY(1px);
+}
+
+/* Стили для сообщений */
+.toast-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.toast-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.toast-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Стиль для подсветки совпадений */
+.highlight {
+    background-color: #fffde7;
+    font-weight: bold;
+    padding: 1px 3px;
+    border-radius: 2px;
+    color: #000;
+}
+
+/* Стили для чекбоксов */
+.checkbox-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.checkbox-cell input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+}
+
+.checkbox-cell input[type="checkbox"]:checked {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.checkbox-cell input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .admin-panel {
+        width: 98%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .controls-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-container,
+    .table-selector {
+        width: 100%;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .action-btn {
+        min-width: auto;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

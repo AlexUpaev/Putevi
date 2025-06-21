@@ -44,9 +44,9 @@
                         <label for="service">Тип услуги</label>
                         <select id="service" name="service">
                             <option value="">Выберите тип услуги</option>
-                            <option value="консультация">Консультация</option>
-                            <option value="support">Техподдержка</option>
-                            <option value="order">Заказ услуг</option>
+                            <option value="Консультация">Консультация</option>
+                            <option value="Техподдержка">Техподдержка</option>
+                            <option value="Заказ услуг">Заказ услуг</option>
                         </select>
                     </div>
 
@@ -60,6 +60,9 @@
                 </form>
             </div>
         </div>
+
+        <!-- Контейнер для фото с историей  -->
+        <?php require_once "blocks/history_with_image.php"; ?>
     </div>
 
     <!-- Футер -->

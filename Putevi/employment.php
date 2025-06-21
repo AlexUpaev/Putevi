@@ -51,6 +51,9 @@
                 </form>
             </div>
         </div>
+
+        <!-- Контейнер для фото с историей  -->
+        <?php require_once "blocks/history_with_image.php"; ?>
     </div>
 
     <!-- Футер -->

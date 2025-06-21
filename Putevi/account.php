@@ -38,7 +38,12 @@
             </div>
 
             <h2>Мои заявки</h2>
-            <!-- Заявки пока не трогаем -->
+            <?php
+            // Подключаем файл для получения заявок пользователя
+            require_once "lib/get_user_requests.php";
+            $requests = get_user_requests($user['id_user']);
+            ?>
+
             <table class="requests-table">
                 <thead>
                     <tr>
@@ -49,39 +54,30 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if (!empty($requests)): ?>
+                    <?php foreach ($requests as $request): ?>
                     <tr>
-                        <td>#001</td>
-                        <td>10.04.2025</td>
-                        <td>Заявка на проектирование дороги</td>
-                        <td class="status status-in-progress">В обработке</td>
+                        <td>#<?= str_pad($request['id_request'], 3, '0', STR_PAD_LEFT) ?></td>
+                        <td><?= date('d.m.Y', strtotime($request['date_of_submission'])) ?></td>
+                        <td><?= htmlspecialchars($request['request_type']) ?></td>
+                        <td class="status status-<?= 
+                                    $request['application_status'] == 'Выполнено' ? 'completed' : 'in-progress'
+                                ?>">
+                            <?= htmlspecialchars($request['application_status'] ?? 'В обработке') ?>
+                        </td>
                     </tr>
+                    <?php endforeach; ?>
+                    <?php else: ?>
                     <tr>
-                        <td>#002</td>
-                        <td>15.04.2025</td>
-                        <td>Консультация по допуску СРО</td>
-                        <td class="status status-completed">Выполнено</td>
+                        <td colspan="4">У вас пока нет заявок</td>
                     </tr>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
 
-        <!-- Контейнер для фото с историей  -->
-        <div class="history-fullwidth-container">
-            <!-- Фоновое изображение на всю ширину -->
-            <div class="history-image-wrapper">
-                <img src="/img/highway.jpg" alt="История компании" class="history-fullwidth-image">
-            </div>
-
-            <!-- Контент поверх изображения -->
-            <div class="history-content-wrapper">
-                <div class="history-content">
-                    <h2>63 года бизнеса</h2>
-                    <p>Наша история - это история объединения людей и мест, о страстных делах, которые сформировали нашу
-                        компанию.</p>
-                    <p class="highlight-text">Загляните в мир дорог</p>
-                </div>
-            </div>
-        </div>
+        <!-- Контейнер для фото с историей -->
+        <?php require_once "blocks/history_with_image.php"; ?>
     </div>
 
     <!-- Футер -->

@@ -1,3 +1,8 @@
+<?php 
+// session_start() должен быть самым первым в файле!
+session_start();
+?>
+
 <header class="container-header">
     <span class="logo"><a href="/index.php"><img src="/img/Logo.svg" alt=""></a></span>
     <nav>
@@ -34,7 +39,13 @@
             <li><a href="/contacts.php">Контакты</a></li>
             <?php endif; ?>
 
-            <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'администратор'): ?>
+            <?php 
+            if (
+                isset($_SESSION['user']) && 
+                $_SESSION['user']['role'] === 'администратор' && 
+                isset($_SESSION['user']['interaction_with_database']) && 
+                $_SESSION['user']['interaction_with_database'] == 1
+            ): ?>
             <li class="dropdown">
                 <a href="#admin">Для администратора</a>
                 <div class="dropdown-content">
@@ -44,7 +55,6 @@
             </li>
             <?php endif; ?>
 
-            <?php session_start(); ?>
             <li class="dropdown">
                 <a href="#admin">Аккаунт</a>
                 <div class="dropdown-content">

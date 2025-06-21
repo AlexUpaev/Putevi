@@ -42,7 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'full_name' => $user['full_name'],
             'email' => $user['email'],
             'role' => $user['role'],
-            'phone' => $user['phone']
+            'phone' => $user['phone'],
+            'interaction_with_database' => $user['interaction_with_database'],
+            'interaction_with_projects' => $user['interaction_with_projects']
         ];
 
         $_SESSION['success'] = "Вы успешно авторизовались!";

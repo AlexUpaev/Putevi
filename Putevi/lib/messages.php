@@ -5,9 +5,9 @@
 .toast-message {
     position: fixed;
     top: 150px;
-    /* Сдвигаем к центру по оси X */
-    left: 43%;
-    /* Компенсируем половину ширины */
+    /* Размещаем по центру горизонтально */
+    left: 50%;
+    /* Смещаем назад на половину собственной ширины */
     transform: translateX(-50%);
     background-color: #d4edda;
     color: #155724;
@@ -18,6 +18,13 @@
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
     animation: fadeIn 0.3s ease-out forwards;
+    /* Добавляем автоматические margins для лучшего центрирования */
+    margin: 0 auto;
+    /* Ограничиваем максимальную ширину, если нужно */
+    max-width: 80%;
+    /* Перенос текста на несколько строк, если нужно */
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .toast-message.error {
@@ -28,19 +35,19 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translate(-50%, -10px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, 0);
     }
 }
 
 @keyframes fadeOut {
     to {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translate(-50%, -10px);
     }
 }
 </style>
